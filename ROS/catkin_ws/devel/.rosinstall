@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ragesh/catkin_ws/devel/setup.sh

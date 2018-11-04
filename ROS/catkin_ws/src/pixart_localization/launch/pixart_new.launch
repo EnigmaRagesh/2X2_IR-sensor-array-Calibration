@@ -1,0 +1,30 @@
+<launch>
+    <param name="robot_height" value="0.45" type="double"/>
+    <param name="visualize" value="true" type="boolean"/>
+    <node name="rviz_pixart" pkg="rviz" type="rviz" respawn="true" args="-d $(find pixart)/rviz/pixart_demo.rviz"/>
+    <node name="pixart_can_reader" pkg="pixart" type="pixart_can_reader_node" output="screen">
+        <param name="ifname" value="slcan0" type="string"/>
+        <!--param name="ifname" value="slcan0" type="string"/-->
+        <param name="debug" value="true" type="bool"/>
+    </node>
+    <node name="pixart_camera00" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/00.yaml" />
+    </node>
+    <node name="pixart_camera01" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/01.yaml" />
+    </node>
+    <node name="pixart_camera02" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/02.yaml" />
+    </node>
+    <node name="pixart_camera03" pkg="pixart" type="pixart_camera_node" output="screen">
+        <rosparam command="load" file="$(find pixart)/calib/03.yaml" />
+    </node>
+
+    <node name="pixart_identifier" pkg="pixart_localization" type="pixart_identifier_node" output="screen">
+	<param name="number_of_cameras" value="4" type="int"/>
+	<param name="desired_frequency" value="270.0" type="double"/>
+	<param name="camera_frequency" value="270.0" type="double"/>
+
+    </node>
+ 
+</launch>

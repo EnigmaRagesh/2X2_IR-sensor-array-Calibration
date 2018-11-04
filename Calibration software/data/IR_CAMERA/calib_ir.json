@@ -1,0 +1,94 @@
+{
+
+"transformations" : [
+    {
+        "name" : "xiCamBoard",
+        "global" : false,
+        "constant" : false,
+        "prior" : false
+    },
+    {
+        "name" : "xi12",
+        "global" : true,
+        "constant" : false,
+        "prior" : true,
+        "value" : [1, 0.044, 0, 0, 0, -1.57]
+    }
+],
+
+"cameras": [
+    {
+       "name" : "cam0",
+       "type" : "eucm",
+       "constant" : false,
+       "value" : [0.01, 1, 1175, 1175, 512, 384]
+    },
+    {
+       "name" : "cam1",
+       "type" : "eucm",
+       "constant" : false,
+       "value" : [0.01, 1, 1175, 1175, 512, 384]
+    }
+],
+
+"data" : [ 
+    {
+        "type" : "ir_data",
+        "camera" : "cam0",
+        "transform_chain" : [
+            {"name" : "xiCamBoard", "direct" : true}
+        ],
+        "init" : "xiCamBoard",
+        "object" : {
+            "type" : "ir_led",
+            "points" : [[0, 0.12, 0], [0, 0, 0], [0.262, 0, 0], [0.262, 0.12, 0]],
+            "_points" : [[0, 0, 0], [0.262, 0, 0], [0.262, 0.12, 0], [0, 0.12, 0]],
+            "corner_bl" : 0,
+            "corner_br" : 3,
+            "corner_ul" : 1,
+            "corner_ur" : 2
+        },    
+        "parameters" : [
+            "check_extraction",
+            "show_outliers",
+            "improve_detection",
+            "_do_not_solve_global",
+            "_do_not_solve",
+            "_save_outlire_images"
+        ],
+        "image_width" : 1024,
+        "image_height" : 768,
+        "data_file" :  "/home/ragesh/Downloads/visgeom-ir_calib/data/calibration/data_ir.json"
+    },
+    {
+        "type" : "ir_data",
+        "camera" : "cam1",
+        "transform_chain" : [
+            {"name" : "xi12", "direct" : false},
+            {"name" : "xiCamBoard", "direct" : true}
+        ],
+        "init" : "xiCamBoard",
+        "object" : {
+            "type" : "ir_led",
+            "points" : [[0, 0.12, 0], [0, 0, 0], [0.262, 0, 0], [0.262, 0.12, 0]],
+            "_points" : [[0, 0, 0], [0.262, 0, 0], [0.262, 0.12, 0], [0, 0.12, 0]],
+            "corner_bl" : 0,
+            "corner_br" : 3,
+            "corner_ul" : 1,
+            "corner_ur" : 2
+        },    
+        "parameters" : [
+            "check_extraction",
+            "show_outliers",
+            "improve_detection",
+            "do_not_solve_global",
+            "do_not_solve",
+            "save_outlire_images"
+        ],
+        "image_width" : 1024,
+        "image_height" : 768,
+        "data_file" :  "/home/ragesh/Downloads/visgeom-ir_calib/data/calibration/data_ir.json"
+    }
+    ]
+}
+

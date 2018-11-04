@@ -1,0 +1,8 @@
+prefix=/home/ragesh/catkin_ws/devel
+
+Name: toycode
+Description: Description of toycode
+Version: 0.0.0
+Cflags: -I/home/ragesh/catkin_ws/devel/include
+Libs: -L/home/ragesh/catkin_ws/devel/lib 
+Requires: 

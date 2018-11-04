@@ -1,0 +1,8 @@
+prefix=/home/ragesh/catkin_ws/devel
+
+Name: store_data
+Description: Description of store_data
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ragesh/catkin_ws/devel/lib 
+Requires: 
