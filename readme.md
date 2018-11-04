@@ -1,9 +1,23 @@
-Open the folder RUN and excecute init.sh 
-In terminal go to the directory and run: ./init.sh
-	
-# ROS catkin_ws
-______________________________________
+##Calibration of 2 X 2 Infrared sensor Array for Multirobot Localization.
 
+#Ecole Centrale de Nantes, France.
+#Developed on June 2018 by:
+
+1. Ragesh RAMACHANDRAN
+2. Olena HRYSHAIENKO
+
+
+
+## RUN
+
+In the terminal go to the directory 'RUN' and then execute the shell script: 
+```
+./init.sh
+```
+
+## ROS catkin_ws
+______________________________________
+```
 #! /bin/bash
 # this file we use to read data from CAN-USB reader
 chmod a+x init.sh 
@@ -26,9 +40,10 @@ cd ..
 bash -c 'catkin_make'
 bash -c 'source devel/setup.bash'
 bash -c 'roslaunch pixart pixart.launch'
+```
 ______________________________________
 
-# CALIBRATION SOFTWARE
+## CALIBRATION SOFTWARE
 ______________________________________
 
 https://github.com/BKhomutenko/visgeom
@@ -38,22 +53,24 @@ ______________________________________
 
 
 # Requred packages:
-
+```
     ceres-solver 1.10.0+
     Eigen3
     OpenCV 2.4.9+
-
+```
 After you have installed the needed libraries, go to the directory visgeom in the terminal and run:
-
+```
 $ mkdir build
 $ cd build
 $ cmake ..
 $ make 
-
+```
 # To run the program
+```
 /calib ../data/IR_CAMERA/calib_ir.json 
+```
 
-
+For details read the project report
 
 
 
