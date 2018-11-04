@@ -1,7 +1,7 @@
-##Calibration of 2 X 2 Infrared sensor Array for Multirobot Localization.
+### Calibration of 2 X 2 Infrared sensor Array for Multirobot Localization.
 
-#Ecole Centrale de Nantes, France.
-#Developed on June 2018 by:
+# Ecole Centrale de Nantes, France.
+# Developed on June 2018 by:
 
 1. Ragesh RAMACHANDRAN
 2. Olena HRYSHAIENKO
